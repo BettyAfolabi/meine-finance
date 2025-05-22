@@ -69,4 +69,8 @@ The Personal Finance Tracker enables users to monitor and analyze their finances
    - Tailwind CSS
    - Jest & React Testing Library for tests
 
+ ## Live site  
+  [meine-finance](https://meine-finance.vercel.app/)
+
+  
 ## Made by Elizabeth Afolabi as an assessment test for Web3 Bridge

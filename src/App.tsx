@@ -22,11 +22,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black p-4 flex flex-col items-center text-white">
-      <h1 className="text-3xl lg:text-5xl font-bold text-blue-500 mb-8 text-center max-w-2xl">
+    <div className="h-full px-4 py-10 flex flex-col items-center text-white">
+      <h1 className="text-3xl lg:text-5xl font-bold text-blue-500 my-8 text-center max-w-2xl">
         Personal Finance Tracker
       </h1>
-      <div className="w-full max-w-2xl px-4 sm:px-0">
+      <div className="w-full max-w-2xl mt-8 lg:mt-4 px-4 sm:px-0">
       <TransactionForm onAdd={addTransaction} />
       <TransactionList transactions={transactions} setTransactions={setTransactions} />
       </div>

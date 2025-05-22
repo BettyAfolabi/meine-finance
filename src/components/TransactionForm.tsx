@@ -38,7 +38,7 @@ const TransactionForm: React.FC<Props> = ({ onAdd }) => {
       onSubmit={handleSubmit}
       className="space-y-4 gap-6 w-full max-w-4xl mx-auto shadow-md border border-gray-500 rounded-2xl p-5"> 
       <div className="flex flex-col lg:flex-row justify-between">
-        <div>
+        <div className='mt-3 lg:mt-0.5'>
           <label htmlFor="amount" className="block text-sm font-medium text-white">
             Amount
           </label>
@@ -55,7 +55,7 @@ const TransactionForm: React.FC<Props> = ({ onAdd }) => {
           />
         </div>
 
-        <div>
+        <div className='mt-3 lg:mt-0.5'>
           <label htmlFor="type" className="block text-sm font-medium text-white">
             Type
           </label>
@@ -65,7 +65,7 @@ const TransactionForm: React.FC<Props> = ({ onAdd }) => {
             onChange={e => setType(e.target.value as CategoryType)}
             className="mt-1 block rounded-md border border-gray-300
               bg-black text-white px-3 py-2 focus:border-indigo-500
-              focus:ring-indigo-500 focus:outline-none sm:text-sm w-[200px]"
+              focus:ring-indigo-500 focus:outline-none sm:text-sm w-full lg:w-[200px]"
           >
             <option value="Income">Income</option>
             <option value="Expense">Expense</option>
@@ -74,7 +74,7 @@ const TransactionForm: React.FC<Props> = ({ onAdd }) => {
       </div>
 
       <div className="flex flex-col lg:flex-row justify-between">
-        <div>
+        <div className='mt-3 lg:mt-0.5'>
           <label htmlFor="category" className="block text-sm font-medium text-white">
             Category
           </label>
@@ -91,7 +91,7 @@ const TransactionForm: React.FC<Props> = ({ onAdd }) => {
           />
         </div>
 
-        <div>
+        <div className='mt-3 lg:mt-0.5'>
           <label htmlFor="date" className="block text-sm font-medium text-white">
             Date
           </label>
@@ -101,14 +101,14 @@ const TransactionForm: React.FC<Props> = ({ onAdd }) => {
             value={date}
             onChange={e => setDate(e.target.value)}
             required
-            className="mt-1 block w-[200px] rounded-md border border-gray-300
+            className="mt-1 block w-full lg:w-[200px] rounded-md border border-gray-300
               px-3 py-2 placeholder-gray-400 focus:border-indigo-500
               focus:ring-indigo-500 focus:outline-none sm:text-sm"
           />
         </div>
       </div>
 
-      <div>
+      <div className='mt-3 lg:mt-0.5'>
         <label htmlFor="notes" className="block text-sm font-medium text-white">
           Notes (optional)
         </label>

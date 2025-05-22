@@ -6,7 +6,6 @@ import TransactionList from "./components/TransactionList";
 const App: React.FC = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
-  // Load transactions from localStorage on mount
   useEffect(() => {
     const storedTransactions = localStorage.getItem("transactions");
     if (storedTransactions) {
@@ -14,21 +13,23 @@ const App: React.FC = () => {
     }
   }, []);
 
-  // Save transactions to localStorage whenever they update
   useEffect(() => {
     localStorage.setItem("transactions", JSON.stringify(transactions));
   }, [transactions]);
 
-  // Add a new transaction
   const addTransaction = (transaction: Transaction) => {
     setTransactions([transaction, ...transactions]);
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <h1 className="text-2xl font-bold text-center">Personal Finance Tracker</h1>
+    <div className="min-h-screen bg-black p-4 flex flex-col items-center text-white">
+      <h1 className="text-3xl lg:text-5xl font-bold text-blue-500 mb-8 text-center max-w-2xl">
+        Personal Finance Tracker
+      </h1>
+      <div className="w-full max-w-2xl px-4 sm:px-0">
       <TransactionForm onAdd={addTransaction} />
       <TransactionList transactions={transactions} setTransactions={setTransactions} />
+      </div>
     </div>
   );
 };

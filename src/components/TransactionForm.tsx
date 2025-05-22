@@ -34,16 +34,103 @@ const TransactionForm: React.FC<Props> = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-2">
-      <input type="number" placeholder="Amount" value={amount} onChange={e => setAmount(e.target.value)} required />
-      <select value={type} onChange={e => setType(e.target.value as CategoryType)}>
-        <option value="Income">Income</option>
-        <option value="Expense">Expense</option>
-      </select>
-      <input type="text" placeholder="Category" value={category} onChange={e => setCategory(e.target.value)} required />
-      <input type="date" value={date} placeholder="Date" onChange={e => setDate(e.target.value)} required />
-      <input type="text" placeholder="Notes (optional)" value={notes} onChange={e => setNotes(e.target.value)} />
-      <button type="submit">Add Transaction</button>
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 gap-6 w-full max-w-4xl mx-auto shadow-md border border-gray-500 rounded-2xl p-5"> 
+      <div className="flex flex-col lg:flex-row justify-between">
+        <div>
+          <label htmlFor="amount" className="block text-sm font-medium text-white">
+            Amount
+          </label>
+          <input
+            id="amount"
+            type="number"
+            placeholder="Amount"
+            value={amount}
+            onChange={e => setAmount(e.target.value)}
+            required
+            className="mt-1 block w-full rounded-md border border-gray-300 
+              px-3 py-2 placeholder-gray-400 focus:border-indigo-500
+              focus:ring-indigo-500 focus:outline-none sm:text-sm"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="type" className="block text-sm font-medium text-white">
+            Type
+          </label>
+          <select
+            id="type"
+            value={type}
+            onChange={e => setType(e.target.value as CategoryType)}
+            className="mt-1 block rounded-md border border-gray-300
+              bg-black text-white px-3 py-2 focus:border-indigo-500
+              focus:ring-indigo-500 focus:outline-none sm:text-sm w-[200px]"
+          >
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="flex flex-col lg:flex-row justify-between">
+        <div>
+          <label htmlFor="category" className="block text-sm font-medium text-white">
+            Category
+          </label>
+          <input
+            id="category"
+            type="text"
+            placeholder="Category"
+            value={category}
+            onChange={e => setCategory(e.target.value)}
+            required
+            className="mt-1 block w-full rounded-md border border-gray-300
+              px-3 py-2 placeholder-gray-400 focus:border-indigo-500
+              focus:ring-indigo-500 focus:outline-none sm:text-sm"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="date" className="block text-sm font-medium text-white">
+            Date
+          </label>
+          <input
+            id="date"
+            type="date"
+            value={date}
+            onChange={e => setDate(e.target.value)}
+            required
+            className="mt-1 block w-[200px] rounded-md border border-gray-300
+              px-3 py-2 placeholder-gray-400 focus:border-indigo-500
+              focus:ring-indigo-500 focus:outline-none sm:text-sm"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label htmlFor="notes" className="block text-sm font-medium text-white">
+          Notes (optional)
+        </label>
+        <textarea
+          id="notes"
+          placeholder="Notes (optional)"
+          value={notes}
+          onChange={e => setNotes(e.target.value)}
+          rows={3}
+          className="mt-1 block w-full rounded-md border border-gray-700 bg-black/20
+            px-3 py-2 placeholder-gray-400 text-white
+            focus:border-bluePrimary focus:ring-bluePrimary focus:outline-none sm:text-sm"
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="bg-blue-500 hover:bg-blue-600 text-white lg:text-lg font-semibold p-4 rounded-xl transition-colors w-full"
+      >
+        Add Transaction
+      </button>
+
     </form>
   );
 };

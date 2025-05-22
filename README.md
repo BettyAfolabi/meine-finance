@@ -11,8 +11,6 @@ A simple React + TypeScript application to help users track their personal incom
 - [Getting Started](#getting-started)  
 - [Technologies](#technologies)  
 - [Testing](#testing)  
-- [Future Improvements](#future-improvements)  
-- [License](#license)  
 
 ---
 
@@ -71,3 +69,4 @@ The Personal Finance Tracker enables users to monitor and analyze their finances
    - Tailwind CSS
    - Jest & React Testing Library for tests
 
+## Made by Elizabeth Afolabi as an assessment test for Web3 Bridge

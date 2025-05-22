@@ -41,7 +41,7 @@ const TransactionForm: React.FC<Props> = ({ onAdd }) => {
         <option value="Expense">Expense</option>
       </select>
       <input type="text" placeholder="Category" value={category} onChange={e => setCategory(e.target.value)} required />
-      <input type="date" value={date} onChange={e => setDate(e.target.value)} required />
+      <input type="date" value={date} placeholder="Date" onChange={e => setDate(e.target.value)} required />
       <input type="text" placeholder="Notes (optional)" value={notes} onChange={e => setNotes(e.target.value)} />
       <button type="submit">Add Transaction</button>
     </form>

@@ -10,7 +10,8 @@ A simple React + TypeScript application to help users track their personal incom
 - [Features](#features)  
 - [Getting Started](#getting-started)  
 - [Technologies](#technologies)  
-- [Testing](#testing)  
+- [Testing](#testing)
+- [Future Improvements](#future-improvements)  
 
 ---
 
@@ -71,6 +72,19 @@ The Personal Finance Tracker enables users to monitor and analyze their finances
 
  ## Live site  
   [meine-finance](https://meine-finance.vercel.app/)
+
+  ##  Future Improvements
+
+  Here are a few planned enhancements to make this personal finance tracker more powerful and user-friendly:
+
+  - **Edit Transactions** – Allow users to modify existing transactions.
+  - **Visual Charts** – Integrate chart libraries (e.g., Chart.js or Recharts) to visualize spending trends.
+  - **Search & Filters** – Add search input and advanced filters for transaction history.
+  - **Authentication** – Allow user login/signup to sync data across devices.
+  - **Dark Mode Toggle** – Improve theme switching experience with a toggle.
+  - **More Tests** – Improve test coverage, especially for edge cases and error states.
+
+  Contributions are welcome! Feel free to fork the repo and open a pull request with new ideas 🚀
 
   
 ## Made by Elizabeth Afolabi as an assessment test for Web3 Bridge

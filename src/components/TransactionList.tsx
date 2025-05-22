@@ -3,14 +3,16 @@ import React, { useState } from "react";
 import type { Transaction } from "../types";
 import { exportToCsv } from "../utils/exportToCsv";
 import { toast } from "react-toastify";
+import { Trash2 } from "lucide-react";
 
 interface Props {
   transactions: Transaction[];
   setTransactions: React.Dispatch<React.SetStateAction<Transaction[]>>;
+  onDelete: (id: string) => void;
 }
 
 
-const TransactionList: React.FC<Props> = ({ transactions }) => {
+const TransactionList: React.FC<Props> = ({ transactions, onDelete }) => {
 
   const [filterType, setFilterType] = useState<'All' | 'Income' | 'Expense'>('All');
 
@@ -38,7 +40,13 @@ const TransactionList: React.FC<Props> = ({ transactions }) => {
               toast.success('CSV downloaded!');
             })
           }
-          className="text-sm bg-blue-600 text-white px-3 py-1 rounded-lg hover:bg-blue-700 outline-none"
+          disabled={filteredTransactions.length === 0}
+          className={`text-sm px-3 py-1 rounded transition-colors
+          ${
+            filteredTransactions.length === 0
+              ? "bg-gray-600 cursor-not-allowed text-gray-400"
+              : "bg-blue-600 hover:bg-blue-700 text-white"
+          }`}
         >
           Export CSV
         </button>
@@ -57,6 +65,14 @@ const TransactionList: React.FC<Props> = ({ transactions }) => {
               </div>
               <div className="text-xs text-grayText">{tx.date}</div>
               {tx.notes && <div className="text-xs italic text-grayText">Note: {tx.notes}</div>}
+              <div className="flex justify-end">
+                <button
+                  onClick={() => onDelete(tx.id)}
+                  className="text-xs px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
+                >
+                  <Trash2 className="w-4 h-4 text-white hover:text-red-300" />
+                </button>
+              </div>
             </li>
           ))}
         </ul>

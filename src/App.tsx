@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import type { Transaction } from "./types";
 import TransactionForm from "./components/TransactionForm";
 import TransactionList from "./components/TransactionList";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const App: React.FC = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -30,6 +33,7 @@ const App: React.FC = () => {
       <TransactionForm onAdd={addTransaction} />
       <TransactionList transactions={transactions} setTransactions={setTransactions} />
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };

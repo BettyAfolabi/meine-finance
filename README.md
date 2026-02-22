@@ -85,6 +85,3 @@ The Personal Finance Tracker enables users to monitor and analyze their finances
   - **More Tests** – Improve test coverage, especially for edge cases and error states.
 
   Contributions are welcome! Feel free to fork the repo and open a pull request with new ideas 🚀
-
-  
-## Made by Elizabeth Afolabi as an assessment test for Web3 Bridge
